@@ -208,9 +208,9 @@ function start () {
 	app.run({
 		'callback': f,
 		'context': this,
-		'host': getURLParameter('host') || '10.11.12.100',
-		'port': getURLParameter('port') || 8000,
-		'protocol': getURLParameter('protocol') || 'ws',
+		'host': getURLParameter('host') || location.host,
+		'port': getURLParameter('port') || location.port || 443,
+		'protocol': getURLParameter('protocol') || 'ws' + (location.protocol.substr(-2,1) ? 's' : ''),
 		'token': '1q2w3e4r',
 		'vmHost': getURLParameter('vmhost') || false,
 		'vmPort': getURLParameter('vmport') || false,
@@ -225,7 +225,7 @@ function start () {
         'heartbeatToken': 'heartbeat',
 		'heartbeatTimeout': 4000,//miliseconds
 		'busFileServerBaseUrl': 'https://10.11.12.200/fileserver/',
-		'layout': getURLParameter('layout') || 'es',
+		'layout' getURLParameter('layout') ||'es',
 		'clientOffset': {
 			'x': 0,
 			'y': 0
