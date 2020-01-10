@@ -225,7 +225,7 @@ function start () {
         'heartbeatToken': 'heartbeat',
 		'heartbeatTimeout': 4000,//miliseconds
 		'busFileServerBaseUrl': 'https://10.11.12.200/fileserver/',
-		'layout' getURLParameter('layout') ||'es',
+		'layout': getURLParameter('layout') || 'de',
 		'clientOffset': {
 			'x': 0,
 			'y': 0
